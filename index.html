@@ -189,45 +189,30 @@
     }
 
     /* ══════════════════════════════
-       EVENT CARDS
+       EVENTS — CLEAN STYLE
     ══════════════════════════════ */
     .events-stack {
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      margin-top: 40px;
+      gap: 0;
+      margin-top: 48px;
     }
 
-    .event-card {
-      background: var(--white);
-      padding: 32px 24px 28px;
-      border-left: 2px solid var(--gold-pale);
-      text-align: left;
-      transition: border-color 0.3s;
-    }
-    .event-card:hover { border-left-color: var(--gold); }
-
-    .event-inner {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 0 20px;
-      align-items: start;
+    .ev-block {
+      text-align: center;
+      padding: 48px 0;
     }
 
-    .ev-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      color: var(--gold-pale);
-      line-height: 1;
-      font-weight: 400;
+    .ev-block + .ev-block {
+      border-top: 1px solid var(--beige);
     }
 
     .ev-tag {
-      font-size: 0.56rem;
-      letter-spacing: 0.3em;
+      font-size: 0.58rem;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .ev-title {
@@ -235,7 +220,8 @@
       font-size: 1.1rem;
       font-weight: 400;
       color: var(--charcoal);
-      line-height: 1.3;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .ev-title-vi {
@@ -243,42 +229,99 @@
       font-style: italic;
       font-size: 0.85rem;
       color: var(--warm-grey);
-      margin-top: 2px;
+      margin-top: 4px;
+    }
+
+    .ev-big-date {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 10vw, 4.5rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1;
+      margin: 16px 0 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .ev-big-date.tbc {
+      font-style: italic;
+      color: var(--warm-grey);
+      font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .ev-lunar {
+      font-size: 0.7rem;
+      color: var(--warm-grey);
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
     }
 
     .ev-badge {
       display: inline-block;
-      margin-top: 8px;
+      margin: 8px 0 20px;
       font-size: 0.58rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--white);
       background: var(--gold-light);
-      padding: 2px 9px;
+      padding: 3px 12px;
     }
 
-    .tl { list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:9px; }
-    .tl li { display:flex; align-items:baseline; gap:10px; font-size:0.8rem; color:var(--warm-grey); }
-    .tl .t { font-weight:400; font-size:0.76rem; color:var(--gold); min-width:40px; flex-shrink:0; }
-    .tl-dot { width:4px; height:4px; background:var(--gold-pale); border-radius:50%; flex-shrink:0; margin-top:3px; }
+    /* horizontal timeline */
+    .tl {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 20px 0 28px;
+    }
+    .tl li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+      position: relative;
+      font-size: 0.78rem;
+      color: var(--warm-grey);
+      line-height: 1.6;
+    }
+    .tl li + li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 1px; height: 28px;
+      background: var(--beige);
+    }
+    .tl .t {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      letter-spacing: 0.06em;
+    }
+    .tl .tbc-t {
+      font-style: italic;
+      color: var(--warm-grey);
+    }
 
     .venue-block {
-      margin-top:20px;
-      padding-top:16px;
-      border-top:1px solid var(--beige);
+      text-align: center;
     }
     .vname {
       font-family:'Playfair Display',serif;
-      font-size:0.92rem;
+      font-size:0.95rem;
       color:var(--charcoal);
       font-weight:400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
-    .vaddr { font-size:0.76rem; color:var(--warm-grey); line-height:1.7; margin-top:3px; }
+    .vaddr { font-size:0.76rem; color:var(--warm-grey); line-height:1.7; margin-top:4px; }
     .vmap {
       display:inline-flex;
       align-items:center;
       gap:5px;
-      margin-top:9px;
+      margin-top:10px;
       font-size:0.62rem;
       letter-spacing:0.2em;
       text-transform:uppercase;
@@ -402,78 +445,74 @@
 <div class="bg-beige">
   <div class="wrap">
     <p class="eyebrow reveal">Lịch trình · Schedule</p>
-    <h2 class="serif reveal d1">18 <em>tháng Mười</em> · October 2026</h2>
+    <h2 class="serif reveal d1"><em>Sunday,</em> 18th October 2026</h2>
 
     <div class="events-stack">
 
-      <!-- 01 VOW -->
-      <div class="event-card reveal d1">
-        <div class="event-inner">
-          <div class="ev-num">01</div>
-          <div>
-            <p class="ev-tag">Chỉ dành cho gia đình · Family only</p>
-            <p class="ev-title">Vow Ceremony</p>
-            <p class="ev-title-vi">Lễ Trao Lời Thề Nguyện</p>
-            <span class="ev-badge">Private · Gia đình</span>
-            <ul class="tl">
-              <li>
-                <span class="t">16:00</span>
-                <span class="tl-dot"></span>
-                <span>Bắt đầu · Ceremony Begins</span>
-              </li>
-            </ul>
-            <div class="venue-block">
-              <p class="vname">Hotel Nikko Saigon</p>
-              <p class="vaddr">235 Nguyễn Văn Cừ, Phường Cầu Ông Lãnh<br>Quận 1, TP. Hồ Chí Minh</p>
-              <a class="vmap" href="https://maps.google.com/?q=Hotel+Nikko+Saigon" target="_blank">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                  <circle cx="12" cy="9" r="2.5"/>
-                </svg>
-                Xem bản đồ · View Map
-              </a>
-            </div>
-          </div>
+      <!-- LỄ VU QUY -->
+      <div class="ev-block reveal d1">
+        <p class="ev-tag">Nhà Gái · Bride's Family</p>
+        <p class="ev-title">Lễ Vu Quy</p>
+        <p class="ev-title-vi">Bride's Departure Ceremony</p>
+        <div class="ev-big-date tbc">To Be Announced</div>
+        <p class="ev-lunar">Ngày · Địa điểm sẽ cập nhật sau</p>
+        <ul class="tl">
+          <li><span class="t tbc-t">TBC</span><span>Đón khách</span></li>
+          <li><span class="t tbc-t">TBC</span><span>Làm lễ</span></li>
+          <li><span class="t tbc-t">TBC</span><span>Khai tiệc</span></li>
+        </ul>
+        <div class="venue-block">
+          <p class="vname">Địa điểm · Venue</p>
+          <p class="vaddr">Sẽ cập nhật sau · To be announced</p>
         </div>
       </div>
 
-      <!-- 02 WEDDING RECEPTION -->
-      <div class="event-card reveal d2">
-        <div class="event-inner">
-          <div class="ev-num">02</div>
-          <div>
-            <p class="ev-tag">Lễ chính · Main Celebration</p>
-            <p class="ev-title">Wedding Ceremony &amp; Reception</p>
-            <p class="ev-title-vi">Lễ Thành Hôn &amp; Tiệc Cưới</p>
-            <ul class="tl">
-              <li>
-                <span class="t">17:00</span>
-                <span class="tl-dot"></span>
-                <span>Đón khách · Welcome Guests</span>
-              </li>
-              <li>
-                <span class="t">18:30</span>
-                <span class="tl-dot"></span>
-                <span>Làm lễ · Wedding Ceremony</span>
-              </li>
-              <li>
-                <span class="t">19:00</span>
-                <span class="tl-dot"></span>
-                <span>Khai tiệc · Reception Dinner</span>
-              </li>
-            </ul>
-            <div class="venue-block">
-              <p class="vname">Hotel Nikko Saigon</p>
-              <p class="vaddr">235 Nguyễn Văn Cừ, Phường Cầu Ông Lãnh<br>Quận 1, TP. Hồ Chí Minh</p>
-              <a class="vmap" href="https://maps.google.com/?q=Hotel+Nikko+Saigon" target="_blank">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                  <circle cx="12" cy="9" r="2.5"/>
-                </svg>
-                Xem bản đồ · View Map
-              </a>
-            </div>
-          </div>
+      <!-- VOW -->
+      <div class="ev-block reveal d2">
+        <p class="ev-tag">Chỉ dành cho gia đình · Family only</p>
+        <p class="ev-title">Vow Ceremony</p>
+        <p class="ev-title-vi">Lễ Trao Lời Thề Nguyện</p>
+        <span class="ev-badge">Private · Gia đình</span>
+        <div class="ev-big-date">18.10.2026</div>
+        <p class="ev-lunar">Chủ Nhật · Sunday</p>
+        <ul class="tl">
+          <li><span class="t">16:00</span><span>Bắt đầu · Begins</span></li>
+        </ul>
+        <div class="venue-block">
+          <p class="vname">Hotel Nikko Saigon</p>
+          <p class="vaddr">235 Nguyễn Văn Cừ, Phường Cầu Ông Lãnh<br>Quận 1, TP. Hồ Chí Minh</p>
+          <a class="vmap" href="https://maps.google.com/?q=Hotel+Nikko+Saigon" target="_blank">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            Xem bản đồ · View Map
+          </a>
+        </div>
+      </div>
+
+      <!-- LỄ THÀNH HÔN -->
+      <div class="ev-block reveal d3">
+        <p class="ev-tag">Lễ chính · Main Celebration</p>
+        <p class="ev-title">Lễ Thành Hôn</p>
+        <p class="ev-title-vi">Wedding Ceremony &amp; Reception</p>
+        <div class="ev-big-date">18.10.2026</div>
+        <p class="ev-lunar">Chủ Nhật · Sunday</p>
+        <ul class="tl">
+          <li><span class="t">17:00</span><span>Đón khách<br><em>Welcome</em></span></li>
+          <li><span class="t">18:30</span><span>Làm lễ<br><em>Ceremony</em></span></li>
+          <li><span class="t">19:00</span><span>Khai tiệc<br><em>Dinner</em></span></li>
+        </ul>
+        <div class="venue-block">
+          <p class="vname">Hotel Nikko Saigon</p>
+          <p class="vaddr">235 Nguyễn Văn Cừ, Phường Cầu Ông Lãnh<br>Quận 1, TP. Hồ Chí Minh</p>
+          <a class="vmap" href="https://maps.google.com/?q=Hotel+Nikko+Saigon" target="_blank">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            Xem bản đồ · View Map
+          </a>
         </div>
       </div>
 
