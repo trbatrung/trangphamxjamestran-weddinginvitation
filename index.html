@@ -68,8 +68,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
+      object-fit: contain;
+      object-position: center center;
       background: #e8e4de;
       filter: brightness(0.85);
       animation: heroZoom 6s ease-out forwards;
@@ -442,11 +442,38 @@
     <div class="rl"></div><div class="rd"></div><div class="rl r"></div>
   </div>
   <p class="body-copy reveal d2">
+    <span style="font-size:0.78rem; letter-spacing:0.08em; color:var(--warm-grey);">
+      Nhà Gái &nbsp;·&nbsp; Bride's Family<br>
+      <strong style="font-family:'Playfair Display',serif; color:var(--charcoal); font-weight:400;">
+        [Tên Ba Cô Dâu]
+      </strong>
+      &nbsp;&amp;&nbsp;
+      <strong style="font-family:'Playfair Display',serif; color:var(--charcoal); font-weight:400;">
+        [Tên Mẹ Cô Dâu]
+      </strong>
+    </span>
+    <br><br>
+    <span style="font-size:0.78rem; letter-spacing:0.08em; color:var(--warm-grey);">
+      Nhà Trai &nbsp;·&nbsp; Groom's Family<br>
+      <strong style="font-family:'Playfair Display',serif; color:var(--charcoal); font-weight:400;">
+        [Tên Ba Chú Rể]
+      </strong>
+      &nbsp;&amp;&nbsp;
+      <strong style="font-family:'Playfair Display',serif; color:var(--charcoal); font-weight:400;">
+        [Tên Mẹ Chú Rể]
+      </strong>
+    </span>
+  </p>
+  <div class="rule reveal d2">
+    <div class="rl"></div><div class="rd"></div><div class="rl r"></div>
+  </div>
+  <p class="body-copy reveal d2">
     Chúng tôi trân trọng kính mời Quý khách đến dự Lễ Cưới<br>
-    <strong style="font-family:'Playfair Display',serif;color:var(--charcoal);font-weight:400;letter-spacing:.05em;font-size:1.4rem;">
+    <strong style="font-family:'Playfair Display',serif;color:var(--charcoal);font-weight:400;letter-spacing:.05em;font-size:2rem;">
       TrangPham &amp; JamesTran
     </strong><br><br>
-    <em>We are overjoyed to celebrate this moment with you.</em>
+    <em>Sự hiện diện của Quý khách là niềm vinh dự của chúng tôi.<br>
+    Your presence is our greatest honour.</em>
   </p>
 </div>
 
@@ -454,7 +481,10 @@
 <div class="bg-beige">
   <div class="wrap">
     <p class="eyebrow reveal">Lịch trình · Schedule</p>
-    <h2 class="serif reveal d1"><em>Sunday,</em> 18th October 2026</h2>
+    <h2 class="serif reveal d1"><em>Chủ Nhật,</em> 18th October 2026</h2>
+    <p style="font-size:0.7rem;color:var(--warm-grey);letter-spacing:0.15em;margin-top:6px;" class="reveal d2">
+      Mùng 9 tháng 9 năm Bính Ngọ
+    </p>
 
     <div class="events-stack">
 
@@ -476,43 +506,39 @@
         </div>
       </div>
 
-      <!-- VOW -->
+      <!-- LỄ THÀNH HÔN + VOW -->
       <div class="ev-block reveal d2">
-        <p class="ev-tag">Chỉ dành cho gia đình · Family only</p>
-        <p class="ev-title">Vow Ceremony</p>
-        <p class="ev-title-vi">Lễ Trao Lời Thề Nguyện</p>
-        <span class="ev-badge">Private · Gia đình</span>
-        <div class="ev-big-date">18.10.2026</div>
-        <p class="ev-lunar">Chủ Nhật · Sunday</p>
-        <ul class="tl">
-          <li><span class="t">16:00</span><span>Bắt đầu · Begins</span></li>
-        </ul>
-        <div class="venue-block">
-          <p class="vname">Hotel Nikko Saigon</p>
-          <p class="vaddr">235 Nguyễn Văn Cừ, Phường Cầu Ông Lãnh<br>Quận 1, TP. Hồ Chí Minh</p>
-          <a class="vmap" href="https://maps.google.com/?q=Hotel+Nikko+Saigon" target="_blank">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-              <circle cx="12" cy="9" r="2.5"/>
-            </svg>
-            Xem bản đồ · View Map
-          </a>
-        </div>
-      </div>
-
-      <!-- LỄ THÀNH HÔN -->
-      <div class="ev-block reveal d3">
         <p class="ev-tag">Lễ chính · Main Celebration</p>
-        <p class="ev-title">Lễ Thành Hôn</p>
-        <p class="ev-title-vi">Wedding Ceremony &amp; Reception</p>
+        <p class="ev-title" style="font-size:2rem; letter-spacing:0.1em;">Lễ Thành Hôn</p>
+        <p class="ev-title-vi" style="font-size:1.1rem;">Wedding Ceremony &amp; Reception</p>
         <div class="ev-big-date">18.10.2026</div>
-        <p class="ev-lunar">Chủ Nhật · Sunday</p>
-        <ul class="tl">
-          <li><span class="t">17:00</span><span>Đón khách<br><em>Welcome</em></span></li>
-          <li><span class="t">18:30</span><span>Làm lễ<br><em>Ceremony</em></span></li>
-          <li><span class="t">19:00</span><span>Khai tiệc<br><em>Dinner</em></span></li>
+        <p class="ev-lunar">Chủ Nhật · Sunday · Mùng 9 tháng 9 năm Bính Ngọ</p>
+
+        <!-- VOW sub-section -->
+        <div style="margin:24px 0 8px; padding:20px 0; border-top:1px solid var(--gold-pale); border-bottom:1px solid var(--gold-pale); background:transparent;">
+          <p style="font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">
+            Chỉ dành cho gia đình · Family only
+          </p>
+          <p style="font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--charcoal);font-weight:400;letter-spacing:0.06em;text-transform:uppercase;">
+            Vow Ceremony
+          </p>
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.8rem;color:var(--warm-grey);margin-top:2px;margin-bottom:12px;">
+            Lễ Trao Lời Thề Nguyện
+          </p>
+          <ul class="tl" style="margin-top:0;">
+            <li><span class="t">15:30</span><span>Đón khách<br><em>Welcome</em></span></li>
+            <li><span class="t">16:00</span><span>Lễ Vows<br><em>until 17:30</em></span></li>
+          </ul>
+        </div>
+
+        <!-- Main reception timeline -->
+        <ul class="tl" style="margin-top:16px;">
+          <li><span class="t">17:30</span><span>Đón khách<br><em>Welcome</em></span></li>
+          <li><span class="t">19:00</span><span>Lễ chính<br><em>Ceremony</em></span></li>
+          <li><span class="t">19:00</span><span>Tiệc<br><em>until 22:00</em></span></li>
         </ul>
-        <div class="venue-block">
+
+        <div class="venue-block" style="margin-top:24px;">
           <p class="vname">Hotel Nikko Saigon</p>
           <p class="vaddr">235 Nguyễn Văn Cừ, Phường Cầu Ông Lãnh<br>Quận 1, TP. Hồ Chí Minh</p>
           <a class="vmap" href="https://maps.google.com/?q=Hotel+Nikko+Saigon" target="_blank">
@@ -532,18 +558,17 @@
 <!-- DRESS CODE -->
 <div class="wrap">
   <p class="eyebrow reveal">Trang phục · Dress Code</p>
-  <h2 class="serif reveal d1">Nude <em>&amp;</em> Pastel</h2>
+  <h2 class="serif reveal d1">Beige · Đen · Nâu · <em>Blush Pink</em></h2>
   <p class="body-copy reveal d2">
-    Quý khách vui lòng mặc trang phục tông màu nude hoặc pastel nhẹ nhàng.<br>
-    <em>Please dress in soft nude or pastel tones.</em>
+    Quý khách vui lòng mặc trang phục tông màu Beige, Đen, Nâu hoặc Blush Pink.<br>
+    Không mặc màu trắng.<br>
+    <em>Please dress in Beige, Black, Brown or Blush Pink. No white please.</em>
   </p>
   <div class="swatches reveal d3">
-    <div class="sw"><div class="sw-dot" style="background:#e8d5c4;"></div><span>Nude</span></div>
-    <div class="sw"><div class="sw-dot" style="background:#f2e0e0;"></div><span>Blush</span></div>
-    <div class="sw"><div class="sw-dot" style="background:#d8e8e0;"></div><span>Sage</span></div>
-    <div class="sw"><div class="sw-dot" style="background:#dce4f0;"></div><span>Powder</span></div>
-    <div class="sw"><div class="sw-dot" style="background:#f0e4f0;"></div><span>Lilac</span></div>
-    <div class="sw"><div class="sw-dot" style="background:#f5f0e0;"></div><span>Cream</span></div>
+    <div class="sw"><div class="sw-dot" style="background:#e8d5c4;"></div><span>Beige</span></div>
+    <div class="sw"><div class="sw-dot" style="background:#2c2c2c;"></div><span>Đen</span></div>
+    <div class="sw"><div class="sw-dot" style="background:#8B6343;"></div><span>Nâu</span></div>
+    <div class="sw"><div class="sw-dot" style="background:#f2a7b0;"></div><span>Blush Pink</span></div>
   </div>
 </div>
 
